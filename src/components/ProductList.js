@@ -4,7 +4,7 @@ export default function ProductList({ products, title = "" }) {
   // console.log(products);
   if (products.length == 0) return;
   return (
-    <div className="bg-gray-100">
+    <div className="bg-orange-50">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         {title ? (
           <h2 className="font-semibold lg:text-4xl text-center text-3xl lg:leading-9 leading-7 text-gray-800">

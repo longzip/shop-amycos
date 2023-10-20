@@ -216,7 +216,7 @@ export default function Product({
                   regularPrice={product?.regularPrice}
                 />
                 {product?.stockQuantity && (
-                  <div className="mt-5 flex items-center text-green-600">
+                  <div className="mt-5 flex items-center text-orange-600">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -298,7 +298,7 @@ export default function Product({
               data-size="5"
               data-href=""
             ></div> */}
-            <div className="bg-gray-300 p-5 ">
+            <div className="bg-orange-100 p-5 ">
               <MailChimpForm />
             </div>
           </div>
