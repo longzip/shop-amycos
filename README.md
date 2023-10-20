@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# [WooCommerce Nextjs React Theme](https://woo-next-imranhsayed.vercel.app/) :rocket:
+[![Project Status: Active.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+![Stars](https://img.shields.io/github/stars/imranhsayed/woo-next?label=%E2%AD%90%20Stars)
+![Forks](https://img.shields.io/github/forks/imranhsayed/woo-next?color=%23ff69b4)
+![Contributors](https://img.shields.io/github/contributors/imranhsayed/woo-next?color=blue)
+![Follow](https://img.shields.io/github/followers/imranhsayed?label=Please%20follow%20%20to%20support%20my%20work%20%F0%9F%99%8F&style=social)
 
-## Getting Started
+> * This is a React WooCommerce theme, built with Next JS, Webpack, Babel, Node, GraphQl
 
-First, run the development server:
+📹 [Full Course Video Tutorial](https://codeytek.com/course/woocommerce-with-react-course/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Important Note ⭐:
+The code for the Video Tutorial is in the branch [youtube-course](https://github.com/imranhsayed/woo-next/tree/youtube-course)
+However, since there is continuous contribution and updates to this project. The 'master'
+branch is upto date with those changes. You can also refer to the PR notes for changes.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Demo Desktop :video_camera:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+![](demos/home-demo.gif)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Live Demo:
 
-## Learn More
+[Live Demo Site](https://woo-next-imranhsayed.vercel.app/)
 
-To learn more about Next.js, take a look at the following resources:
+## Checkout Page Demo
+![](demos/Checkout-page.gif)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Payment Demo ( Paypal example )
+![](demos/paypal-payment-demo.gif)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Order Received Demo
+![](demos/order-received-demo.gif)
 
-## Deploy on Vercel
+## Stripe Checkout 
+[Stripe Demo Video](https://youtu.be/i75_Vtx-CnA)
+![](demos/stripe-demo.gif)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Features:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. WooCommerce Store in React( contains: Products Page, Single Product Page, AddToCart, CartPage and Checkout Page with country selection ).
+2. SSR
+3. SEO friendly
+4. Automatic Code Splitting
+5. Hot Reloading
+6. Prefetching
+8. Incremental Static (Re)generation ( Next.js 10 support )
+9. GraphQL with Apollo Client
+10. Tailwindcss
+11. Stripe Checkout ( with Stripe Session and Stripe webhook)
+
+## Getting Started :rocket:
+
+These instructions will get you a copy of the project up and running on your local machine for development purposes.
+
+### Prerequisites :page_facing_up:
+
+### Installing :wrench:
+
+1. Clone this repo using terminal `git clone git@github.com:imranhsayed/woo-next`
+2. `cd woo-next`
+3. `yarn install`
+
+## Add GraphQl support for WordPress
+
+1. Download and activate the following plugins , in your WordPress plugin directory:
+
+* [wp-graphql](https://github.com/imranhsayed/woo-next/tree/master/wordpress/plugins) Exposes graphql for WordPress ( **Tested with v-1.3.8** of this plugin )
+* [wp-graphql-woocommerce](https://github.com/imranhsayed/woo-next/tree/master/wordpress/plugins) Adds Woocommerce functionality to a WPGraphQL schema ( **Tested with v-0.8.1** of this plugin )
+* [headless-cms](https://github.com/imranhsayed/woo-next/tree/master/wordpress/plugins) Extends WPGraphQL Schema ( **Tested with v-1.8.0** of this plugin )
+
+* Make sure Woocommerce plugin is also installed in your WordPress site. You can also import default wooCommerce products that come with wooCommerce Plugin for development ( if you don't have any products in your WordPress install ) `WP Dashboard > Tools > Import > WooCommerce products(CSV)`: The WooCommerce default products csv file is available at `wp-content/plugins/woocommerce/sample-data/sample_products.csv`
+
+## Hero Carousel.
+To use Hero carousel, create a category called 'offers' from WordPress Dashboard > Products > Categories.
+Now create and assign as many child categories to this parent 'offers' category with name, description and image.
+These Child categories data will automatically be used to create hero carousel on the frontend.
+
+
+## Configuration(for GraphQL implementation) :wrench:
+
+* _Note_ Below is for GraphQL implementation , for REST API check [feature/rest-api](https://github.com/imranhsayed/woo-next/tree/feature/rest-api) branch
+
+1. (Required) Create a `.env` file taking reference from `.env-example` and update your WordPressSite URL.
+- `NEXT_PUBLIC_WORDPRESS_URL=https://example.com`
+
+## Branch details
+
+1. [feature/rest-api](https://github.com/imranhsayed/woo-next/tree/feature/rest-api) Contains REST API Implementation.
+
+2. The `master` branch has the GraphQL implementation.
+
+## Common Commands :computer:
+
+* `dev` Runs server in development mode
+
+## Code Contributors ✰
+
+Thanks to all the people who contributed to the code of this project 🤝
+
+<div>
+    <img src="https://github.com/imranhsayed.png?size=30" alt="Imran Sayed">
+    <img src="https://github.com/w3bdesign.png?size=30" alt="Daniel F">
+    <img src="https://github.com/delunix.png?size=30" alt="Fandi Rahmawan">
+    <img src="https://github.com/yudyananda.png?size=30" alt="yudyananda">
+</div>
+
+
+## Contributing :busts_in_silhouette:
+
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Versioning :bookmark_tabs:
+
+I use [Git](https://github.com/) for versioning.
+
+## Author :bust_in_silhouette:
+
+* **[Imran Sayed](https://twitter.com/imranhsayed)**
+
+## License :page_with_curl:
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
