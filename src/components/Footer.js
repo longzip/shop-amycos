@@ -27,7 +27,7 @@ const Footer1 = ({
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 md:gap-8 gap-4">
         <div className="flex flex-col flex-shrink-0">
           <h2 className="text-base font-semibold leading-4 text-gray-800">
-            {siteName}
+            Thông tin liên hệ
           </h2>
           {/* <div
             className="mt-1 zalo-follow-only-button"
@@ -283,17 +283,19 @@ const Footer1 = ({
         <a
           className="text-underlinefont-semibold text-gray-900 underline dark:text-white decoration-indigo-500 hover:underline"
           target="_blank"
-          href="https://www.hotham.vn/"
+          href="https://fb.me/lovanlongvn"
         >
-          Hồ Thị Thắm
+          Lỗ Văn Long
         </a>{" "}
-        |{" "}
         <a
-          className="text-underlinefont-semibold text-gray-900 underline dark:text-white decoration-indigo-500 hover:underline"
-          target="_blank"
-          href="https://www.amycos.shop/"
+          href="//www.dmca.com/Protection/Status.aspx?ID=f7805dd1-3206-48d2-aed8-564276b49ce5"
+          title="DMCA.com Protection Status"
+          class="dmca-badge"
         >
-          Mỹ phẩm Amycos
+          <img
+            src="https://images.dmca.com/Badges/dmca_protected_sml_120n.png?ID=f7805dd1-3206-48d2-aed8-564276b49ce5"
+            alt="DMCA.com Protection Status"
+          />
         </a>
       </p>
     </div>

@@ -76,7 +76,7 @@ const PRODUCTS_AND_CATEGORIES_QUERY = gql`
         }
       }
     }
-    products(where: { featured: true, stockStatus: IN_STOCK }) {
+    products(where: { featured: true }) {
       nodes {
         id
         productId: databaseId

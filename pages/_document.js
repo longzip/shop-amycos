@@ -45,6 +45,10 @@ export default class MyDocument extends Document {
               />
             </noscript>
           ) : null}
+          <script
+            async
+            src={`https://js.hsforms.net/forms/embed/v2.js?ver=10.2.5`}
+          />
         </Head>
         <body>
           <Main />
@@ -77,6 +81,10 @@ export default class MyDocument extends Document {
               }}
             />
           ) : null}
+          <script
+            async
+            src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"
+          />
         </body>
       </Html>
     );
