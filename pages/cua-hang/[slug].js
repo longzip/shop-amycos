@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Layout from "../../src/components/Layout";
 import { useRouter } from "next/router";
@@ -58,6 +58,10 @@ export default function Product({
       getProductOthers.set(node.productId, node);
   });
   const otheProducts = [...getProductOthers.values()];
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
   return (
     <Layout
       siteSeo={siteSeo}
@@ -194,22 +198,26 @@ export default function Product({
                       />
                     </svg>
                   </div>
-                  {/* <div
-                    className="zalo-share-button"
-                    data-href={`${WEBSITE_URL}/cua-hang/${router.query.slug}/`}
-                    data-oaid="907870636305349915"
-                    data-layout="1"
-                    data-color="blue"
-                    data-customize="false"
-                  ></div> */}
-                </div>
 
-                <div
-                  className=" font-normal text-base leading-6 text-gray-600 mt-7"
-                  dangerouslySetInnerHTML={{
-                    __html: product.shortDescription,
-                  }}
-                />
+                  {isClient ? (
+                    <>
+                      <div
+                        className="zalo-follow-only-button items-center"
+                        data-oaid="939846860985963068"
+                      ></div>
+                      <div
+                        className="zalo-share-button"
+                        data-href={`${WEBSITE_URL}/cua-hang/${router.query.slug}/`}
+                        data-oaid="939846860985963068"
+                        data-layout="1"
+                        data-color="blue"
+                        data-customize="false"
+                      ></div>
+                    </>
+                  ) : (
+                    ""
+                  )}
+                </div>
 
                 <Price
                   salesPrice={product?.price}
@@ -288,19 +296,28 @@ export default function Product({
                 {/* {product.stockStatus === "IN_STOCK" && (
                   
                 )} */}
+                <div
+                  className=" font-normal text-base leading-6 text-gray-600 mt-7"
+                  dangerouslySetInnerHTML={{
+                    __html: product.shortDescription,
+                  }}
+                />
               </div>
             </div>
 
             <PostBody content={product.description} />
-            {/* <div
-              className="mt-5 zalo-comment-plugin"
-              data-appid="4012174264882708298"
-              data-size="5"
-              data-href=""
-            ></div> */}
+            {/*  */}
             <div className="bg-orange-100 p-5 ">
               <MailChimpForm />
             </div>
+            {isClient ? (
+              <div
+                className="mt-5 zalo-comment-plugin"
+                data-appid="4012174264882708298"
+                data-size="5"
+                data-href={`${WEBSITE_URL}/cua-hang/${router.query.slug}/`}
+              ></div>
+            ) : null}
           </div>
           <ProductList products={otheProducts} title="Sản phẩm khác" />
         </>
