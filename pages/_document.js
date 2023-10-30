@@ -85,7 +85,7 @@ export default class MyDocument extends Document {
             async
             src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"
           />
-          <script src="https://sp.zalo.me/plugins/sdk.js" />
+          <script async src="https://sp.zalo.me/plugins/sdk.js" />
         </body>
       </Html>
     );

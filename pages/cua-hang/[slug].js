@@ -198,25 +198,6 @@ export default function Product({
                       />
                     </svg>
                   </div>
-
-                  {isClient ? (
-                    <>
-                      <div
-                        className="zalo-follow-only-button items-center"
-                        data-oaid="939846860985963068"
-                      ></div>
-                      <div
-                        className="zalo-share-button"
-                        data-href={`${WEBSITE_URL}/cua-hang/${router.query.slug}/`}
-                        data-oaid="939846860985963068"
-                        data-layout="1"
-                        data-color="blue"
-                        data-customize="false"
-                      ></div>
-                    </>
-                  ) : (
-                    ""
-                  )}
                 </div>
 
                 <Price
@@ -307,6 +288,24 @@ export default function Product({
 
             <PostBody content={product.description} />
             {/*  */}
+            {isClient ? (
+              <>
+                <div
+                  class="zalo-follow-only-button"
+                  data-oaid="939846860985963068"
+                ></div>
+                <div
+                  className="zalo-share-button"
+                  data-href={`https://www.amycos.vn/cua-hang/${router.query.slug}/`}
+                  data-oaid="939846860985963068"
+                  data-layout="1"
+                  data-color="blue"
+                  data-customize="false"
+                ></div>
+              </>
+            ) : (
+              "Quan tâm & chia sẻ"
+            )}
             <div className="bg-orange-100 p-5 ">
               <MailChimpForm />
             </div>
@@ -317,7 +316,9 @@ export default function Product({
                 data-size="5"
                 data-href={`${WEBSITE_URL}/cua-hang/${router.query.slug}/`}
               ></div>
-            ) : null}
+            ) : (
+              "Bình luận"
+            )}
           </div>
           <ProductList products={otheProducts} title="Sản phẩm khác" />
         </>
