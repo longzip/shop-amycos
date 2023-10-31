@@ -70,7 +70,7 @@ export default function Index({ heroCarousel }) {
                           __html: item?.description,
                         }}
                       />
-                      <a href={`/danh-muc-san-pham/${item.slug}`}>
+                      <a href={`https://blog.amycos.vn/${item.slug}/`}>
                         <button className="mx-2 my-0 md:my-5 bg-white transition duration-150 ease-in-out focus:outline-none rounded text-gray-800 border border-gray-300 px-6 py-1 md:py-2 uppercase text-sm md:text-base">
                           Mua ngay
                         </button>
