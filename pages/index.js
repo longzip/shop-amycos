@@ -51,7 +51,7 @@ export default function Home(props) {
       </div> */}
 
       {/*Categories*/}
-      <ProductCategoriesList productCategories={productCategories} />
+      {/* <ProductCategoriesList productCategories={productCategories} /> */}
       <Video
         videos={heroCarousel
           .map((v) => ({ video: v.image.description }))
@@ -61,7 +61,7 @@ export default function Home(props) {
       <ProductList products={productOnSales} title="Flash Sale" />
 
       {/*Products*/}
-      <ProductList products={products} title="Sản phẩm bán chạy" />
+      <ProductList products={products} />
     </Layout>
   );
 }

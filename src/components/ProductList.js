@@ -10,7 +10,11 @@ export default function ProductList({ products, title = "" }) {
           <h2 className="font-semibold lg:text-4xl text-center text-3xl lg:leading-9 leading-7 text-gray-800">
             {title}
           </h2>
-        ) : null}
+        ) : (
+          <h1 className="font-semibold lg:text-4xl text-center text-3xl lg:leading-9 leading-7 text-gray-800">
+            Mỹ phẩm Amycos
+          </h1>
+        )}
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
           {products.map((product) => (
             <a
