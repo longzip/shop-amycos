@@ -26,6 +26,7 @@ const NAV_QUERY = gql`
             label
             id
             path
+            target
           }
         }
         name
@@ -39,6 +40,7 @@ const NAV_QUERY = gql`
             label
             id
             path
+            target
           }
         }
         name
@@ -52,6 +54,7 @@ const NAV_QUERY = gql`
             label
             id
             path
+            target
           }
         }
         name

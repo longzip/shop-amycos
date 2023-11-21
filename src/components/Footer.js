@@ -142,7 +142,10 @@ const Footer1 = ({
                     className="hover:text-gray-500 text-base leading-4 mt-6 text-gray-800 cursor-pointer"
                   >
                     <Link key={menuItem.id} href={menuItem.path}>
-                      <a dangerouslySetInnerHTML={{ __html: menuItem.label }} />
+                      <a
+                        dangerouslySetInnerHTML={{ __html: menuItem.label }}
+                        target="_blank"
+                      />
                     </Link>
                   </li>
                 ))
@@ -161,7 +164,10 @@ const Footer1 = ({
                     className="hover:text-gray-500 text-base leading-4 mt-6 text-gray-800 cursor-pointer"
                   >
                     <Link key={menuItem.id} href={menuItem.path}>
-                      <a dangerouslySetInnerHTML={{ __html: menuItem.label }} />
+                      <a
+                        dangerouslySetInnerHTML={{ __html: menuItem.label }}
+                        target="_blank"
+                      />
                     </Link>
                   </li>
                 ))

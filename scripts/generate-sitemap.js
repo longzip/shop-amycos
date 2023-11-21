@@ -4,7 +4,11 @@ const API_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL;
 const gql = String.raw;
 
 function addPage(page) {
-  const path = page.replace("pages", "").replace(".js", "").replace(".mdx", "");
+  const path = page
+    .replace("pages", "")
+    .replace("public", "")
+    .replace(".js", "")
+    .replace(".mdx", "");
   const route = path === "/index" ? "" : path;
 
   return `  <url>
@@ -82,6 +86,7 @@ async function generateSitemap() {
   // Ignore Next.js specific files (e.g., _app.js) and API routes.
   const pages = await globby([
     "pages/**/*{.js,.mdx}",
+    "public/**/*.html",
     "!pages/_*.js",
     "!pages/[slug].js",
     "!pages/cua-hang/[slug].js",
