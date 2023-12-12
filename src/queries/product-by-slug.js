@@ -17,7 +17,7 @@ export const PRODUCT_BY_SLUG_QUERY = gql`
           description
           mediaItemUrl
           sourceUrl
-          url: sourceUrl(size: WOOCOMMERCE_SINGLE)
+          url: sourceUrl(size: WOOCOMMERCE_THUMBNAIL)
         }
       }
       image {

@@ -33,10 +33,10 @@ const GalleryCarousel = ({ gallery, image }) => {
           return (
             <a
               className="gallery-item bg-gray-100 flex justify-center items-center"
-              data-src={item.description || item?.url}
+              data-src={item.description || item?.sourceUrl}
               key={item.id}
             >
-              <img className="img-responsive" alt="" src={item?.sourceUrl} />
+              <img className="img-responsive" alt="" src={item?.url} />
             </a>
           );
         })}
