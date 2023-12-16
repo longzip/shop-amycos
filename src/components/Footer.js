@@ -39,7 +39,7 @@ const Footer1 = ({
           />
           <div className="flex items-center gap-x-4 mt-12">
             <div className="opacity-50 w-8 h-8 flex-shrink-0 bg-gray-800 cursor-pointer hover:bg-gray-700 rounded-full flex items-center justify-center">
-              <a href={FB_PAGE_URL} target="_blank">
+              <a href="https://www.facebook.com/amycos.vn" target="_blank">
                 <svg
                   width="18"
                   height="18"
@@ -57,7 +57,7 @@ const Footer1 = ({
               </a>
             </div>
             <div className="opacity-50 w-8 h-8 flex-shrink-0 bg-gray-800 cursor-pointer hover:bg-gray-700 rounded-full flex items-center justify-center">
-              <a href={TIKTOK_PAGE_URL} target="_blank">
+              <a href="https://www.tiktok.com/@lanmycosmetics" target="_blank">
                 <svg
                   width="17"
                   height="18"
@@ -75,7 +75,7 @@ const Footer1 = ({
               </a>
             </div>
             <div className="opacity-50 w-8 h-8 flex-shrink-0 bg-gray-800 cursor-pointer hover:bg-gray-700 rounded-full flex items-center justify-center">
-              <a href={YOUTUBE_PAGE_URL} target="_blank">
+              <a href="https://www.youtube.com/@lanmycosmetics" target="_blank">
                 <svg
                   width="18"
                   height="18"
@@ -289,7 +289,7 @@ const Footer1 = ({
         <a
           className="text-underlinefont-semibold text-gray-900 underline dark:text-white decoration-indigo-500 hover:underline"
           target="_blank"
-          href="https://fb.me/lovanlongvn"
+          href="https://www.facebook.com/lovanlongvn"
         >
           Lỗ Văn Long
         </a>{" "}
