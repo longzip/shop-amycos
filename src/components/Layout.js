@@ -1,4 +1,5 @@
 import { AppProvider } from "./context/AppContext";
+import { LiveChatLoaderProvider, Messenger } from "react-live-chat-loader";
 import Header from "./Header";
 import Footer from "./Footer";
 import client from "./ApolloClient";
@@ -12,24 +13,31 @@ Router.events.on("routeChangeError", () => NProgress.done());
 
 const Layout = (props) => {
   return (
-    <AppProvider>
-      <ApolloProvider client={client}>
-        <>
-          <Header
-            siteSeo={props.siteSeo}
-            mainMenu={props.mainMenu}
-            mobileMenu={props.mobileMenu}
-            productCategories={props.productCategories}
-          />
-          {props.children}
-          <Footer
-            siteSeo={props.siteSeo}
-            footerMenu={props.footerMenu}
-            footerMenu2={props.footerMenu2}
-          />
-        </>
-      </ApolloProvider>
-    </AppProvider>
+    <LiveChatLoaderProvider provider="messenger" providerKey="103350567990132">
+      <AppProvider>
+        <ApolloProvider client={client}>
+          <>
+            <Header
+              siteSeo={props.siteSeo}
+              mainMenu={props.mainMenu}
+              mobileMenu={props.mobileMenu}
+              productCategories={props.productCategories}
+            />
+            {props.children}
+            <Footer
+              siteSeo={props.siteSeo}
+              footerMenu={props.footerMenu}
+              footerMenu2={props.footerMenu2}
+            />
+            <Messenger
+              color="#FF7E29"
+              loggedInGreeting="Xin chào! Chúng tôi có thể giúp gì cho bạn?"
+              loggedOutGreeting="Xin chào! Chúng tôi có thể giúp gì cho bạn?"
+            />
+          </>
+        </ApolloProvider>
+      </AppProvider>
+    </LiveChatLoaderProvider>
   );
 };
 

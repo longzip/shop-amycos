@@ -17,7 +17,7 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <div id="fb-root"></div>
+          {/* <div id="fb-root"></div>
           <div id="fb-customer-chat" className="fb-customerchat"></div>
           {FB_PAGE_ID ? (
             <script
@@ -44,7 +44,7 @@ export default class MyDocument extends Document {
             `,
               }}
             />
-          ) : null}
+          ) : null} */}
           <script
             async
             src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"

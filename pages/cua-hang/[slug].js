@@ -184,7 +184,7 @@ export default function Product({
                       viewBox="0 0 24 24"
                       stroke-width="1.5"
                       stroke="currentColor"
-                      class="w-6 h-6"
+                      className="w-6 h-6"
                       onClick={() =>
                         navigator.clipboard.writeText(
                           `${product.name}\r\n\nMã sản phẩm: ${product.sku}\r\n\nGiá ưu đãi: ${product.price}\r\n\nMua hàng chính hãng ưu đãi hấp dẫn tại ${WEBSITE_URL}/cua-hang/${router.query.slug}/`
@@ -291,7 +291,7 @@ export default function Product({
             {isClient ? (
               <>
                 <div
-                  class="zalo-follow-only-button"
+                  className="zalo-follow-only-button"
                   data-oaid="939846860985963068"
                 ></div>
                 <div
