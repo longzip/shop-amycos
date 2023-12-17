@@ -55,12 +55,14 @@ export default function Index({ heroCarousel }) {
               return (
                 <Slide key={item?.id} index={index}>
                   <div className="relative flex w-full">
-                    <img
-                      className="flex object-cover object-center w-full md:w-3/4"
-                      src={item?.image?.sourceUrl}
-                      alt={item?.image?.altText}
-                    />
-                    <div className="absolute w-full invisible md:visible md:right-0 bottom-0 md:h-full md:w-1/4 md:px-5 md:pt-[30px] lg:pt-[120px] bg-orange-500 text-center py-1">
+                    <a href={`https://blog.amycos.vn/${item.slug}/`}>
+                      <img
+                        className="flex object-cover object-center w-full"
+                        src={item?.image?.sourceUrl}
+                        alt={item?.image?.altText}
+                      />
+                    </a>
+                    {/* <div className="absolute w-full invisible md:visible md:right-0 bottom-0 md:h-full md:w-1/4 md:px-5 md:pt-[30px] lg:pt-[120px] bg-orange-500 text-center py-1">
                       <h2 className="uppercase leading-none md:leading-7 text-xl text-white md:text-2xl font-semibold">
                         {item?.name}
                       </h2>
@@ -75,7 +77,7 @@ export default function Index({ heroCarousel }) {
                           Xem thêm
                         </button>
                       </a>
-                    </div>
+                    </div> */}
                   </div>
                 </Slide>
               );
@@ -85,7 +87,7 @@ export default function Index({ heroCarousel }) {
         <ButtonNext
           role="button"
           aria-label="slide forward"
-          className="absolute z-30 right-0 md:right-1/4 mr-8 focus:outline-none focus:bg-strongGray focus:ring-2 focus:ring-offset-2 focus:ring-strongGray"
+          className="absolute z-30 right-0  mr-8 focus:outline-none focus:bg-strongGray focus:ring-2 focus:ring-offset-2 focus:ring-strongGray"
           id="next"
         >
           <svg
