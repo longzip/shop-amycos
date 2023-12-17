@@ -302,29 +302,18 @@ export default function Product({
                   data-color="blue"
                   data-customize="false"
                 ></div>
+                <div
+                  className="mt-5 zalo-comment-plugin"
+                  data-appid="4012174264882708298"
+                  data-size="5"
+                  data-href={`${WEBSITE_URL}/cua-hang/${router.query.slug}/`}
+                ></div>
               </>
-            ) : (
-              "Quan tâm & chia sẻ"
-            )}
-            {/* <div className="bg-orange-100 p-5 ">
-              <MailChimpForm />
-            </div> */}
-            {isClient ? (
-              <div
-                className="mt-5 zalo-comment-plugin"
-                data-appid="4012174264882708298"
-                data-size="5"
-                data-href={`${WEBSITE_URL}/cua-hang/${router.query.slug}/`}
-              ></div>
-            ) : (
-              "Bình luận"
-            )}
+            ) : null}
           </div>
           <ProductList products={otheProducts} title="Sản phẩm khác" />
         </>
-      ) : (
-        ""
-      )}
+      ) : null}
     </Layout>
   );
 }
