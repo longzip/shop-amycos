@@ -132,7 +132,7 @@ const Header = ({
 
       <header className="relative bg-white">
         <div
-          className="flex h-10 items-center justify-center px-4 text-sm font-medium text-orange-500 sm:px-6 lg:px-8"
+          className="flex h-10 items-center justify-center px-4 text-sm font-medium bg-[#ff5c35] text-white sm:px-6 lg:px-8"
           dangerouslySetInnerHTML={{
             __html: logo?.description,
           }}

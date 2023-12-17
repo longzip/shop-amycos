@@ -7,11 +7,11 @@ export default function ProductList({ products, title = "" }) {
     <div className="bg-orange-50">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         {title ? (
-          <h2 className="font-semibold lg:text-4xl text-center text-3xl lg:leading-9 leading-7 text-gray-800">
+          <h2 className="font-semibold lg:text-4xl text-center text-3xl lg:leading-9 leading-7 text-gray-800 font-playfair">
             {title}
           </h2>
         ) : (
-          <h1 className="font-semibold lg:text-4xl text-center text-3xl lg:leading-9 leading-7 text-gray-800">
+          <h1 className="font-semibold lg:text-4xl text-center text-3xl lg:leading-9 leading-7 text-gray-800 font-playfair">
             Mỹ phẩm Amycos
           </h1>
         )}
@@ -29,7 +29,9 @@ export default function ProductList({ products, title = "" }) {
                   className="h-full w-full object-cover object-center group-hover:opacity-75"
                 />
               </div>
-              <h3 className="mt-4 text-xl text-gray-700">{product.name}</h3>
+              <h3 className="mt-4 text-xl text-gray-700 font-playfair">
+                {product.name}
+              </h3>
               {/* <p className="mt-1 text-lg font-medium text-gray-900">
                 {product.price}
               </p> */}

@@ -42,7 +42,7 @@ const Price = ({ regularPrice = 0, salesPrice }) => {
   const productMeta = discountPercent(regularPrice, salesPrice);
 
   return (
-    <p className=" lg:text-2xl text-lg lg:leading-6 leading-5 font-medium text-gray-900 mt-2">
+    <p className=" lg:text-xl text-lg lg:leading-6 leading-5 font-medium text-gray-900 mt-2">
       {/* Regular price */}
       {productMeta?.discountPercent ? (
         <span className="font-semibold">{salesPrice}</span>

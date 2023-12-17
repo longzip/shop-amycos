@@ -26,7 +26,7 @@ const Footer1 = ({
     <div className="mx-auto container py-16 xl:px-20 lg:px-12 sm:px-6 px-4">
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 md:gap-8 gap-4">
         <div className="flex flex-col flex-shrink-0">
-          <h2 className="text-base font-semibold leading-4 text-gray-800">
+          <h2 className="text-base font-semibold leading-4 text-secondary font-playfair">
             Thông tin liên hệ
           </h2>
           {/* <div
@@ -131,7 +131,7 @@ const Footer1 = ({
           </div>
         </div>
         <div className="sm:ml-0 ml-8">
-          <h2 className="text-base font-semibold leading-4 text-gray-800">
+          <h2 className="text-base font-semibold leading-4 text-secondary font-playfair">
             {footerMenu[0]?.name ?? "Footer Menu 1"}
           </h2>
           <ul>
@@ -139,7 +139,7 @@ const Footer1 = ({
               ? footerMenu[0].menuItems.nodes.map((menuItem) => (
                   <li
                     key={menuItem.id}
-                    className="hover:text-gray-500 text-base leading-4 mt-6 text-gray-800 cursor-pointer"
+                    className="hover:text-gray-800 text-base leading-4 mt-6 text-gray-500 cursor-pointer"
                   >
                     <Link key={menuItem.id} href={menuItem.path}>
                       <a
@@ -153,7 +153,7 @@ const Footer1 = ({
           </ul>
         </div>
         <div>
-          <h2 className="text-base font-semibold leading-4 text-gray-800">
+          <h2 className="text-base font-semibold leading-4 text-secondary font-playfair">
             {footerMenu2[0]?.name ?? "Footer Menu 2"}
           </h2>
           <ul>
@@ -161,7 +161,7 @@ const Footer1 = ({
               ? footerMenu2[0].menuItems.nodes.map((menuItem) => (
                   <li
                     key={menuItem.id}
-                    className="hover:text-gray-500 text-base leading-4 mt-6 text-gray-800 cursor-pointer"
+                    className="hover:text-gray-800 text-base leading-4 mt-6 text-gray-500 cursor-pointer"
                   >
                     <Link key={menuItem.id} href={menuItem.path}>
                       <a
@@ -182,8 +182,8 @@ const Footer1 = ({
             name="mc-embedded-subscribe-form"
             target="_self"
           >
-            <label className="text-xl font-medium leading-5 text-gray-800">
-              Đăng Ký Trở Thành Khách Hàng Thân Thiết
+            <label className="text-xl font-medium leading-5 text-secondary font-playfair">
+              Đăng ký email để nhận ưu đãi *
             </label>
             <input
               className="invisible"
@@ -235,8 +235,8 @@ const Footer1 = ({
           name="mc-embedded-subscribe-form"
           target="_self"
         >
-          <label className="text-xl font-medium leading-5 text-gray-800">
-            Đăng Ký Trở Thành Khách Hàng Thân Thiết
+          <label className="text-xl font-medium leading-5 text-secondary font-playfair">
+            Đăng ký email để nhận ưu đãi *
           </label>
           <input
             className="invisible"
