@@ -32,6 +32,11 @@ module.exports = {
   async redirects() {
     return [
       {
+        source: "/danh-muc-san-pham/offers/:path*",
+        destination: "https://blog.amycos.vn/:path*",
+        permanent: true,
+      },
+      {
         source: "/san-pham/:path*",
         destination: "/cua-hang/:path*",
         permanent: true,
