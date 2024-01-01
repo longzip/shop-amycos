@@ -17,50 +17,38 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          {/* <div id="fb-root"></div>
-          <div id="fb-customer-chat" className="fb-customerchat"></div>
-          {FB_PAGE_ID ? (
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-            var chatbox = document.getElementById('fb-customer-chat');
-            chatbox.setAttribute("page_id", "${FB_PAGE_ID}");
-            chatbox.setAttribute("attribution", "biz_inbox");
 
-            window.fbAsyncInit = function() {
-              FB.init({
-                xfbml            : true,
-                version          : 'v13.0'
-              });
-            };
-      
-            (function(d, s, id) {
-              var js, fjs = d.getElementsByTagName(s)[0];
-              if (d.getElementById(id)) return;
-              js = d.createElement(s); js.id = id;
-              js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
-              fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-            `,
-              }}
-            />
-          ) : null} */}
           <script
             async
             src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"
           />
           <script async src="https://sp.zalo.me/plugins/sdk.js" />
 
-          {FB_PIXEL_ID ? (
-            <noscript>
-              <img
-                height="1"
-                width="1"
-                style={{ display: "none" }}
-                src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
-              />
-            </noscript>
-          ) : null}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                !function(f,b,e,v,n,t,s)
+                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t,s)}(window, document,'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+                fbq('init', '1501297014052877');
+                fbq('track', 'PageView');
+          `,
+            }}
+          />
+          <noscript>
+            <img
+              height="1"
+              width="1"
+              style="display:none"
+              src="https://www.facebook.com/tr?id=1501297014052877&ev=PageView&noscript=1"
+            />
+          </noscript>
+
           <script
             async
             src={`https://js.hsforms.net/forms/embed/v2.js?ver=10.2.5`}
