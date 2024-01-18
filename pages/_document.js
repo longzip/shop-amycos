@@ -49,10 +49,7 @@ export default class MyDocument extends Document {
             />
           </noscript>
 
-          <script
-            async
-            src={`https://js.hsforms.net/forms/embed/v2.js?ver=10.2.5`}
-          />
+          <script async src={`/v2.js`} />
           {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
             <script
               async
