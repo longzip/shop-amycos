@@ -7,12 +7,12 @@ export default class MyDocument extends Document {
     return (
       <Html lang="vi">
         <Head>
-          {/* <script
+          <script
             id="mcjs"
             dangerouslySetInnerHTML={{
               __html: `!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","${MAILCHIMP_FORM_CONN}");`,
             }}
-          /> */}
+          />
         </Head>
         <body>
           <Main />
@@ -24,7 +24,7 @@ export default class MyDocument extends Document {
           />
           <script async src="https://sp.zalo.me/plugins/sdk.js" />
 
-          <script
+          {/* <script
             dangerouslySetInnerHTML={{
               __html: `
                 !function(f,b,e,v,n,t,s)
@@ -47,9 +47,12 @@ export default class MyDocument extends Document {
               style={{ display: "none" }}
               src="https://www.facebook.com/tr?id=1501297014052877&ev=PageView&noscript=1"
             />
-          </noscript>
+          </noscript> */}
 
-          <script async src={`/v2.js`} />
+          <script
+            async
+            src={`https://js.hsforms.net/forms/embed/v2.js?ver=10.2.5`}
+          />
           {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
             <script
               async

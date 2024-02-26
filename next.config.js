@@ -46,11 +46,37 @@ module.exports = {
         destination: "/cua-hang/:path*",
         permanent: true,
       },
-      // {
-      //   source: "/danh-muc-san-pham/:path*",
-      //   destination: "/:path*",
-      //   permanent: true,
-      // },
+      {
+        source: "/cua-hang/",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/shopee/",
+        destination: "https://shopee.vn/lanmycosmetics",
+        permanent: true,
+      },
+      {
+        source: "/zalo/",
+        destination: "https://zalo.me/939846860985963068",
+        permanent: true,
+      },
+      {
+        source: "/facebook/",
+        destination: "https://www.facebook.com/amycosvn/",
+        permanent: true,
+      },
+      {
+        source: "/cua-hang/glow-booster-serum/",
+        destination:
+          "/cua-hang/amycos-glow-booster-serum-duong-da-mo-nam-tan-nhang/",
+        permanent: true,
+      },
+      {
+        source: "/cua-hang/serum-huong-duong/",
+        destination: "/cua-hang/serum-hoa-huong-duong-amycos/",
+        permanent: true,
+      },
       {
         source: "/blog/:slug*",
         destination: `https://${allowedImageWordPressDomain}/blog/:slug*`,

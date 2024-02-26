@@ -289,9 +289,9 @@ const Footer1 = ({
         <a
           className="text-underlinefont-semibold text-gray-900 underline dark:text-white decoration-indigo-500 hover:underline"
           target="_blank"
-          href="https://www.facebook.com/lovanlongvn"
+          href="https://www.facebook.com/longwebstudio"
         >
-          Lỗ Văn Long
+          Long Web Studio
         </a>{" "}
         <a
           href="//www.dmca.com/Protection/Status.aspx?ID=f7805dd1-3206-48d2-aed8-564276b49ce5"
