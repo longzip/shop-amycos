@@ -1,6 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import { FB_PIXEL_ID } from "../lib/fpixel";
-import { FB_PAGE_ID } from "../lib/constants";
+import { MAILCHIMP_FORM_CONN } from "../lib/constants";
 
 export default class MyDocument extends Document {
   render() {
