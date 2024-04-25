@@ -142,8 +142,8 @@ export default function Nav({
               <ul className="hidden w-8/12 md:flex items-center justify-center space-x-8">
                 {mainMenu[0]?.menuItems?.nodes
                   ? mainMenu[0].menuItems.nodes.map((menuItem) => (
-                      <li>
-                        <Link key={menuItem.id} href={menuItem.url}>
+                      <li key={menuItem.id}>
+                        <Link href={menuItem.url}>
                           <a
                             className="text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
                             dangerouslySetInnerHTML={{ __html: menuItem.label }}
@@ -409,8 +409,8 @@ export default function Nav({
               <ul className="flex flex-col space-y-6">
                 {mobileMenu[0]?.menuItems?.nodes
                   ? mobileMenu[0].menuItems.nodes.map((menuItem) => (
-                      <li>
-                        <Link key={menuItem.id} href={menuItem.url}>
+                      <li key={menuItem.id}>
+                        <Link href={menuItem.url}>
                           <a className=" flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800">
                             {menuItem.label}
                             <div>

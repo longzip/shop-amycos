@@ -63,7 +63,7 @@ export default function Home(props) {
       {/*Products*/}
       {/* <ProductList products={products} /> */}
       {productCategories.map(({ name, image, products, slug }) => (
-        <>
+        <div key={slug}>
           <div className="mx-auto max-w-2xl lg:max-w-6xl">
             {image ? (
               <img
@@ -78,7 +78,7 @@ export default function Home(props) {
             title={name}
             xemThem={`/danh-muc-san-pham/${slug}/`}
           ></ProductList>
-        </>
+        </div>
       ))}
     </Layout>
   );

@@ -9,9 +9,10 @@ const Video = ({ videos, title = "Video" }) => {
         <div className="mt-6 space-y-12 lg:grid lg:grid-cols-2 lg:gap-x-6 lg:space-y-6">
           {videos
             .filter((v) => v.video)
-            .map(({ video }) => {
+            .map(({ video, index }) => {
               return (
                 <div
+                  key={index}
                   className="aspect-w-16 aspect-h-9"
                   dangerouslySetInnerHTML={{
                     __html: video?.slice(3).slice(0, -5),

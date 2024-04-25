@@ -95,7 +95,7 @@ export default function Product({
                   />
                 </div>
               ) : null}
-              <div className=" w-full sm:w-96 md:w-8/12 lg:w-6/12 items-center">
+              <div className="relative w-full sm:w-96 md:w-8/12 lg:w-6/12 items-center">
                 <h1 className="font-semibold lg:text-4xl text-3xl lg:leading-9 leading-7 text-gray-800 mt-4 font-playfair">
                   {product.name}
                 </h1>
@@ -175,7 +175,7 @@ export default function Product({
                     {product.productId} reviews
                   </a>
                 </div>
-                <div className=" flex flex-row justify-between  mt-5">
+                <div className=" flex flex-row justify-between mt-5">
                   <div className="flex item-center">
                     Mã sản phẩm: {product.sku}
                     <svg

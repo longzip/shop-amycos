@@ -29,17 +29,15 @@ const GalleryCarousel = ({ gallery, image }) => {
         mode="lg-fade"
         elementClassNames="w-full grid lg:grid-cols-6 sm:grid-cols-4 grid-cols-2 gap-6"
       >
-        {gallery.map((item) => {
-          return (
-            <a
-              className="gallery-item bg-gray-100 flex justify-center items-center"
-              data-src={item.description || item?.sourceUrl}
-              key={item.id}
-            >
-              <img className="img-responsive" alt="" src={item?.url} />
-            </a>
-          );
-        })}
+        {gallery.map((item) => (
+          <a
+            className="gallery-item bg-gray-100 flex justify-center items-center"
+            data-src={item.description || item?.sourceUrl}
+            key={item.id}
+          >
+            <img className="img-responsive" alt="" src={item?.url} />
+          </a>
+        ))}
       </LightGallery>
     </div>
   );

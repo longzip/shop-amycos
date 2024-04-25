@@ -51,18 +51,17 @@ export default function Index({ heroCarousel }) {
         </ButtonBack>
         <div className="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
           <Slider>
-            {heroCarousel.map((item, index) => {
-              return (
-                <Slide key={item?.id} index={index}>
-                  <div className="relative flex w-full">
-                    <a href={`https://blog.amycos.vn/${item.slug}/`}>
-                      <img
-                        className="flex object-cover object-center w-full"
-                        src={item?.image?.sourceUrl}
-                        alt={item?.image?.altText}
-                      />
-                    </a>
-                    {/* <div className="absolute w-full invisible md:visible md:right-0 bottom-0 md:h-full md:w-1/4 md:px-5 md:pt-[30px] lg:pt-[120px] bg-orange-500 text-center py-1">
+            {heroCarousel.map((item, index) => (
+              <Slide key={item?.id} index={index}>
+                <div className="relative flex w-full">
+                  <a href={`https://blog.amycos.vn/${item.slug}/`}>
+                    <img
+                      className="flex object-cover object-center w-full"
+                      src={item?.image?.sourceUrl}
+                      alt={item?.image?.altText}
+                    />
+                  </a>
+                  {/* <div className="absolute w-full invisible md:visible md:right-0 bottom-0 md:h-full md:w-1/4 md:px-5 md:pt-[30px] lg:pt-[120px] bg-orange-500 text-center py-1">
                       <h2 className="uppercase leading-none md:leading-7 text-xl text-white md:text-2xl font-semibold">
                         {item?.name}
                       </h2>
@@ -78,10 +77,9 @@ export default function Index({ heroCarousel }) {
                         </button>
                       </a>
                     </div> */}
-                  </div>
-                </Slide>
-              );
-            })}
+                </div>
+              </Slide>
+            ))}
           </Slider>
         </div>
         <ButtonNext
