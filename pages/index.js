@@ -58,10 +58,28 @@ export default function Home(props) {
           .filter((v) => v.video)}
       />
 
-      <ProductList products={productOnSales} title="Flash Sale" />
+      {/* <ProductList products={productOnSales} title="Flash Sale" /> */}
 
       {/*Products*/}
-      <ProductList products={products} />
+      {/* <ProductList products={products} /> */}
+      {productCategories.map(({ name, image, products, slug }) => (
+        <>
+          <div className="mx-auto max-w-2xl lg:max-w-6xl">
+            {image ? (
+              <img
+                src={image?.sourceUrl}
+                alt={image?.altText}
+                className="h-full w-full object-cover object-center group-hover:opacity-75"
+              />
+            ) : null}
+          </div>
+          <ProductList
+            products={products.nodes}
+            title={name}
+            xemThem={`/danh-muc-san-pham/${slug}/`}
+          ></ProductList>
+        </>
+      ))}
     </Layout>
   );
 }

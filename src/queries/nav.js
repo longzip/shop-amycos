@@ -91,11 +91,25 @@ const NAV_QUERY = gql`
           sourceUrl
           altText
         }
-        products(where: { stockStatus: IN_STOCK, supportedTypesOnly: true }) {
+        products(
+          where: { stockStatus: IN_STOCK, supportedTypesOnly: true }
+          first: 6
+        ) {
           nodes {
             id
-            name
+
             slug
+            image {
+              id
+              altText
+              sourceUrl(size: WOOCOMMERCE_SINGLE)
+            }
+            name
+            ... on SimpleProduct {
+              price
+              regularPrice
+              id
+            }
           }
         }
       }
