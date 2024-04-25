@@ -5,28 +5,20 @@ import client from "../src/components/ApolloClient";
 import PRODUCTS_AND_CATEGORIES_QUERY from "../src/queries/product-and-categories";
 import NAV_QUERY from "../src/queries/nav";
 import HeroCarousel from "../src/components/home/hero-carousel";
-
 import parse from "html-react-parser";
-import ProductCategoriesList from "../src/components/ProductCategoriesList";
-import { PAGE_BY_SLUG_QUERY } from "../src/queries/page-by-slug";
-import PostBody from "../src/components/post-body";
-import Video from "../src/components/Video";
 
-export default function Home(props) {
-  const {
-    homePage,
-    products,
-    productOnSales,
-    productCategories,
-    heroCarousel,
-    fbPageId,
-    siteSeo,
-    mainMenu,
-    mobileMenu,
-    footerMenu,
-    footerMenu2,
-    page,
-  } = props || {};
+export default function Home({
+  homePage,
+  productCategories,
+  heroCarousel,
+  fbPageId,
+  siteSeo,
+  mainMenu,
+  mobileMenu,
+  footerMenu,
+  footerMenu2,
+  images,
+}) {
   const fullHead = parse(homePage?.seo?.fullHead);
 
   return (
@@ -40,28 +32,8 @@ export default function Home(props) {
       productCategories={productCategories}
     >
       <Head>{fullHead}</Head>
-      {/*Hero Carousel*/}
       <HeroCarousel heroCarousel={heroCarousel} />
-      {/*Products OnSale*/}
-      {/* <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4 ">
-        <h1 className="font-semibold lg:text-4xl text-center text-3xl lg:leading-9 leading-7 text-gray-800 mt-4">
-          {page.title}
-        </h1>
-        <PostBody content={page.content} />
-      </div> */}
 
-      {/*Categories*/}
-      {/* <ProductCategoriesList productCategories={productCategories} /> */}
-      <Video
-        videos={heroCarousel
-          .map((v) => ({ video: v.image.description }))
-          .filter((v) => v.video)}
-      />
-
-      {/* <ProductList products={productOnSales} title="Flash Sale" /> */}
-
-      {/*Products*/}
-      {/* <ProductList products={products} /> */}
       {productCategories.map(({ name, image, products, slug }) => (
         <div key={slug}>
           <div className="mx-auto max-w-2xl lg:max-w-6xl">
@@ -80,6 +52,31 @@ export default function Home(props) {
           ></ProductList>
         </div>
       ))}
+      <div className="text-center p-10">
+        <h2 className="font-bold text-4xl mb-4">Mỹ Phẩm Amycos</h2>
+        <p class="text-3xl">Trên Instagram</p>
+      </div>
+      <div className="grid grid-cols-1 gap-x-1 gap-y-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-5 ">
+        {images &&
+          images.map(({ id, media_type, caption, media_url }) => (
+            <div
+              key={id}
+              className="aspect-h-1 aspect-w-1 w-full overflow-hidden  bg-gray-200"
+            >
+              {media_type === "IMAGE" ? (
+                <img
+                  src={media_url}
+                  alt={caption}
+                  className="h-full w-full object-cover object-center group-hover:opacity-75"
+                />
+              ) : (
+                <video class="w-full" controls>
+                  <source src={media_url} type="video/mp4" />
+                </video>
+              )}
+            </div>
+          ))}
+      </div>
     </Layout>
   );
 }
@@ -101,13 +98,6 @@ async function loadData() {
     const { data } = await client.query({
       query: PRODUCTS_AND_CATEGORIES_QUERY,
     });
-
-    const {
-      data: { page },
-    } = await client.query({
-      query: PAGE_BY_SLUG_QUERY,
-      variables: { slug: "/" },
-    });
     return {
       mainMenu: mainMenu.nodes,
       footerMenu: footerMenu.nodes,
@@ -115,15 +105,10 @@ async function loadData() {
       mobileMenu: mobileMenu.nodes,
       siteSeo: siteSeo.schema,
       productCategories: productCategories.nodes,
-      productOnSales: data?.productOnSales?.nodes
-        ? data.productOnSales.nodes
-        : [],
-      products: data?.products?.nodes ? data.products.nodes : [],
       heroCarousel: data?.heroCarousel?.nodes[0]?.children?.nodes
         ? data.heroCarousel.nodes[0].children.nodes
         : [],
       homePage: data?.pageBy,
-      page,
     };
   } catch (error) {
     return null;
@@ -131,13 +116,18 @@ async function loadData() {
 }
 
 export async function getStaticProps() {
+  const url = `https://graph.instagram.com/me/media?fields=id,media_type,caption,media_url&access_token=${process.env.INSTAGRAM_KEY}`;
+  const media = await fetch(url);
+  const feed = await media.json();
+
   let data = await loadData();
   if (!data) data = await loadData();
   if (!data) data = await loadData();
   if (!data) data = await loadData();
   if (!data) data = await loadData();
+
   return {
-    props: data,
+    props: { ...data, images: feed.data },
     revalidate: 3600,
   };
 }

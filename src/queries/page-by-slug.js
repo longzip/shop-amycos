@@ -29,7 +29,7 @@ export const PAGE_SLUGS = gql`
           "cG9zdDo1"
         ]
       }
-      first: 5000
+      first: 50
     ) {
       nodes {
         id
