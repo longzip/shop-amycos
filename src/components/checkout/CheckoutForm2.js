@@ -77,7 +77,7 @@ const CheckoutForm2 = () => {
     if (!isEmpty(errors)) return null;
 
     const checkOutData = {
-      paymentMethod: "bacs",
+      paymentMethod: "vietqr",
       billing: {
         address1,
         email,
