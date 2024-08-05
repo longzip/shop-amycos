@@ -53,7 +53,12 @@ module.exports = {
       },
       {
         source: "/shopee/",
-        destination: "https://shopee.vn/lanmycosmetics",
+        destination: "https://s.shopee.vn/3fjrG04APh",
+        permanent: true,
+      },
+      {
+        source: "/shopee/:path*",
+        destination: "https://s.shopee.vn/:path*",
         permanent: true,
       },
       {
