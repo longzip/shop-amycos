@@ -117,12 +117,12 @@ const Header = ({
       </Transition.Root>
 
       <header className="relative bg-white">
-        <div
+        {/* <div
           className="flex items-center justify-center p-3 text-sm font-medium bg-[#ff5c35] text-white sm:px-6 lg:px-8"
           dangerouslySetInnerHTML={{
             __html: logo?.description,
           }}
-        />
+        /> */}
 
         <nav
           aria-label="Top"

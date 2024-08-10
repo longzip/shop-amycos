@@ -4,13 +4,13 @@ import ProductList from "../src/components/ProductList";
 import client from "../src/components/ApolloClient";
 import PRODUCTS_AND_CATEGORIES_QUERY from "../src/queries/product-and-categories";
 import NAV_QUERY from "../src/queries/nav";
-import HeroCarousel from "../src/components/home/hero-carousel";
+// import HeroCarousel from "../src/components/home/hero-carousel";
 import parse from "html-react-parser";
 
 export default function Home({
   homePage,
   productCategories,
-  heroCarousel,
+  // heroCarousel,
   fbPageId,
   siteSeo,
   mainMenu,
@@ -29,7 +29,7 @@ export default function Home({
       productCategories={productCategories}
     >
       <Head>{parse(homePage?.seo?.fullHead)}</Head>
-      <HeroCarousel heroCarousel={heroCarousel} />
+      {/* <HeroCarousel heroCarousel={heroCarousel} /> */}
 
       {productCategories.map(({ name, image, products, slug }) => (
         <div key={slug}>
