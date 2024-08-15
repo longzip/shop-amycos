@@ -145,7 +145,7 @@ const Header = ({
                   <span className="sr-only">{siteName}</span>
                   <img
                     className="h-8 w-auto"
-                    src={logo?.sourceUrl}
+                    src={logo?.sourceUrl.replace("https://www","https://i0.wp.com/www")}
                     alt={`${siteName} logo`}
                   />
                 </a>

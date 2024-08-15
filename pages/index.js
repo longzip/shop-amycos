@@ -33,10 +33,10 @@ export default function Home({
 
       {productCategories.map(({ name, image, products, slug }) => (
         <div key={slug}>
-          <div className="mx-auto max-w-2xl lg:max-w-6xl">
+          <div>
             {image ? (
               <img
-                src={image?.sourceUrl}
+                src={image?.sourceUrl.replace("https://www","https://i0.wp.com/www")}
                 alt={image?.altText}
                 className="h-full w-full object-cover object-center group-hover:opacity-75"
               />

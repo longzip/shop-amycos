@@ -66,7 +66,7 @@ const CartItem = ({
       <td className="woo-next-cart-element">
         <img
           width="64"
-          src={item.image.sourceUrl}
+          src={item.image.sourceUrl.replace("https://www","https://i0.wp.com/www")+"?fit=64%2C64&ssl=1"}
           srcSet={item.image.srcSet}
           alt={item.image.title}
         />

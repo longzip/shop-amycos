@@ -31,7 +31,7 @@ export default function ProductList({ products, title = "", xemThem }) {
                 <div className="relative">
                   <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-white xl:aspect-h-8 xl:aspect-w-7">
                     <img
-                      src={product.image?.sourceUrl}
+                      src={product.image?.sourceUrl.replace("https://www","https://i0.wp.com/www")}
                       alt={product.image?.altText}
                       className="h-full w-full object-cover object-center group-hover:opacity-75"
                     />

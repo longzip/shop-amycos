@@ -119,7 +119,7 @@ const getStripeLineItems = (products) => {
         return {
             quantity: product?.qty ?? 0,
             name: product?.name ?? '',
-            images: [product?.image?.sourceUrl ?? ''],
+            images: [product?.image?.sourceUrl.replace("https://www","https://i0.wp.com/www") ?? ''],
             amount: Math.round(product?.price * 100),
             currency: 'usd',
         }

@@ -15,7 +15,7 @@ const Product = (props) => {
             <img
               className="group-hover:opacity-60 transition duration-500 block h-full w-full object-cover object-center cursor-pointer"
               loading="lazy"
-              src={product?.image?.sourceUrl ?? ""}
+              src={product?.image?.sourceUrl.replace("https://www","https://i0.wp.com/www") ?? ""}
               alt={product?.image?.altText ?? product?.slug}
             />
 

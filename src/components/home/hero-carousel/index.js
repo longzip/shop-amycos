@@ -57,7 +57,7 @@ export default function Index({ heroCarousel }) {
                   <a href={`https://blog.amycos.vn/${item.slug}/`}>
                     <img
                       className="flex object-cover object-center w-full"
-                      src={item?.image?.sourceUrl}
+                      src={item?.image?.sourceUrl.replace("https://www","https://i0.wp.com/www")}
                       alt={item?.image?.altText}
                     />
                   </a>

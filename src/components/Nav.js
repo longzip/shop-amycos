@@ -130,7 +130,7 @@ export default function Nav({
                     {logo ? (
                       <img
                         className="mr-2 h-16 w-auto"
-                        src={logo?.sourceUrl}
+                        src={logo?.sourceUrl.replace("https://www","https://i0.wp.com/www")}
                         alt={`${siteName} logo`}
                       />
                     ) : (

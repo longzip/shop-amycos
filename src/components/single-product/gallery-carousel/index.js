@@ -20,7 +20,7 @@ const GalleryCarousel = ({ gallery, image }) => {
         />
       ) : (
         <div className=" w-full flex justify-center items-center">
-          <img src={image.url} alt={image.altText} />
+          <img src={image.sourceUrl.replace("https://www","https://i0.wp.com/www")+"?fit=600%2C600&ssl=1"} alt={image.altText} />
         </div>
       )}
 
@@ -32,10 +32,10 @@ const GalleryCarousel = ({ gallery, image }) => {
         {gallery.map((item) => (
           <a
             className="gallery-item bg-gray-100 flex justify-center items-center"
-            data-src={item.description || item?.sourceUrl}
+            data-src={item.description || item?.sourceUrl.replace("https://www","https://i0.wp.com/www")}
             key={item.id}
           >
-            <img className="img-responsive" alt="" src={item?.url} />
+            <img className="img-responsive" alt="" src={item?.sourceUrl.replace("https://www","https://i0.wp.com/www")+"?fit=300%2C300&ssl=1"} />
           </a>
         ))}
       </LightGallery>

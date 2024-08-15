@@ -87,7 +87,7 @@ export default function Product({
               ) : !isEmpty(product.image) ? (
                 <div className="w-full lg:w-4/12">
                   <img
-                    src={product?.image?.sourceUrl}
+                    src={product?.image?.sourceUrl.replace("https://www","https://i0.wp.com/www")+"?fit=600%2C600&ssl=1"}
                     alt="Product Image"
                     width="100%"
                     height="auto"

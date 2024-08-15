@@ -10,7 +10,7 @@ const ParentCategoryBlock = (props) => {
       <div className="flex flex-row items-center justify-center space-x-3">
         <img
           className="w-24 h-24 object-cover object-center rounded-full border shadow-2xl"
-          src={category?.image?.sourceUrl ?? ""}
+          src={category?.image?.sourceUrl.replace("https://www","https://i0.wp.com/www") ?? ""}
           alt={category?.image?.altText ?? category.slug}
         />
         <h3 className="text-sm text-gray-500">

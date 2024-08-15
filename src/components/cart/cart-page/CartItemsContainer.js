@@ -203,7 +203,7 @@ const CartItemsContainer = () => {
                   <li key={key} className="flex py-6">
                     <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                       <img
-                        src={product.node.image?.sourceUrl}
+                        src={product.node.image?.sourceUrl.replace("https://www","https://i0.wp.com/www")+"?fit=96%2C96&ssl=1"}
                         alt={product.node.image?.altText}
                         className="h-full w-full object-cover object-center"
                       />

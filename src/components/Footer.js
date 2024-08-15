@@ -117,7 +117,7 @@ const Footer1 = ({
             </div>
             <div className="opacity-50 w-8 h-8 flex-shrink-0 bg-gray-800 cursor-pointer hover:bg-gray-700 rounded-full flex items-center justify-center">
               <a href="/shopee" target="_blank">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m4 7l.867 12.143a2 2 0 0 0 2 1.857h10.276a2 2 0 0 0 2-1.857L20.01 7h-16zm4.5 0c0-1.653 1.5-4 3.5-4s3.5 2.347 3.5 4"/><path d="M9.5 17c.413.462 1 1 2.5 1s2.5-.897 2.5-2s-1-1.5-2.5-2s-2-1.47-2-2c0-1.104 1-2 2-2s1.5 0 2.5 1"/></g></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="m4 7l.867 12.143a2 2 0 0 0 2 1.857h10.276a2 2 0 0 0 2-1.857L20.01 7h-16zm4.5 0c0-1.653 1.5-4 3.5-4s3.5 2.347 3.5 4"/><path d="M9.5 17c.413.462 1 1 2.5 1s2.5-.897 2.5-2s-1-1.5-2.5-2s-2-1.47-2-2c0-1.104 1-2 2-2s1.5 0 2.5 1"/></g></svg>
               </a>
             </div>
           </div>
@@ -273,15 +273,15 @@ const Footer1 = ({
 
       <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <p className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
-        © 2023{" "}
+        © 2024{" "}
         <a href={homeUrl} className="hover:underline">
           {siteName}™
         </a>
-        . All Rights Reserved. Thiết kế website hiện đại cùng{" "}
+        . Thiết kế website hiện đại cùng{" "}
         <a
           className="text-underlinefont-semibold text-gray-900 underline dark:text-white decoration-indigo-500 hover:underline"
           target="_blank"
-          href="https://www.longwebstudio.net/"
+          href="https://thietke.longwebstudio.net/"
         >
           Long Web Studio
         </a>{" "}
