@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import Layout from "../../src/components/Layout";
 import { useRouter } from "next/router";
@@ -9,7 +9,7 @@ import {
   PRODUCT_SLUGS,
 } from "../../src/queries/product-by-slug";
 import NAV_QUERY from "../../src/queries/nav";
-import { forEach, isEmpty } from "lodash";
+import {  isEmpty } from "lodash";
 import GalleryCarousel from "../../src/components/single-product/gallery-carousel";
 import Price from "../../src/components/single-product/price";
 import parse from "html-react-parser";
@@ -27,7 +27,6 @@ export default function Product({
   footerMenu2,
   productCategories,
 }) {
-  const [rotate, setRotate] = useState(false);
   const [count, setCount] = useState(1);
 
   const addCount = () => {
@@ -47,21 +46,19 @@ export default function Product({
     return <div>Loading...</div>;
   }
 
-  const fullHead = parse(product?.seo.fullHead);
-  const otheProductsRaw = product.productCategories.nodes
+  
+  const otherProductsRaw = product.productCategories.nodes
     .map(({ products }) => products.nodes)
     .flat();
 
   const getProductOthers = new Map();
-  otheProductsRaw.forEach((node) => {
+  otherProductsRaw.forEach((node) => {
     if (product.productId !== node.productId)
       getProductOthers.set(node.productId, node);
   });
-  const otheProducts = [...getProductOthers.values()];
-  const [isClient, setIsClient] = useState(false);
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+  const otherProducts = [...getProductOthers.values()];
+  // Lấy danh sách sản phẩm khác
+  
   return (
     <Layout
       siteSeo={siteSeo}
@@ -74,7 +71,7 @@ export default function Product({
       {product ? (
         <>
           <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4 ">
-            <Head>{fullHead}</Head>
+            <Head>{parse(product.seo.fullHead)}</Head>
             <p className=" focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 font-normal text-base leading-4 text-gray-600 font-playfair">
               Trang chủ / Cửa hàng / {product.name}
             </p>
@@ -91,7 +88,7 @@ export default function Product({
                     alt="Product Image"
                     width="100%"
                     height="auto"
-                    // srcSet={ product?.image?.srcSet }
+                    
                   />
                 </div>
               ) : null}
@@ -274,9 +271,6 @@ export default function Product({
                   <hr className=" bg-gray-200 w-full my-2" />
                 </div>
                 <AddToCartButton product={product} quantity={count} />
-                {/* {product.stockStatus === "IN_STOCK" && (
-                  
-                )} */}
                 <div
                   className=" font-normal text-base leading-6 text-gray-600 mt-7"
                   dangerouslySetInnerHTML={{
@@ -286,32 +280,9 @@ export default function Product({
               </div>
             </div>
 
-            <PostBody content={product.description} />
-            {/*  */}
-            {isClient ? (
-              <>
-                <div
-                  className="zalo-follow-only-button"
-                  data-oaid="939846860985963068"
-                ></div>
-                <div
-                  className="zalo-share-button"
-                  data-href={`https://www.amycos.vn/cua-hang/${router.query.slug}/`}
-                  data-oaid="939846860985963068"
-                  data-layout="1"
-                  data-color="blue"
-                  data-customize="false"
-                ></div>
-                <div
-                  className="mt-5 zalo-comment-plugin"
-                  data-appid="4012174264882708298"
-                  data-size="5"
-                  data-href={`${WEBSITE_URL}/cua-hang/${router.query.slug}/`}
-                ></div>
-              </>
-            ) : null}
+            <PostBody content={product.description} />      
           </div>
-          <ProductList products={otheProducts} title="Sản phẩm khác" />
+          <ProductList products={otherProducts} title="Sản phẩm khác" />
         </>
       ) : null}
     </Layout>
@@ -355,33 +326,29 @@ async function loadData(slug) {
 }
 
 export async function getStaticProps(context) {
-  const {
-    params: { slug },
-  } = context;
+  const { slug } = context.params;
+  const data = await loadData(slug);
 
-  const {
-    mainMenu,
-    footerMenu,
-    footerMenu2,
-    mobileMenu,
-    siteSeo,
-    productCategories,
-    product,
-  } = await loadData(slug);
+  if (!data || !data.product) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {
-      mainMenu: mainMenu.nodes,
-      footerMenu: footerMenu.nodes,
-      footerMenu2: footerMenu2.nodes,
-      mobileMenu: mobileMenu.nodes,
-      siteSeo: siteSeo.schema,
-      productCategories: productCategories.nodes,
-      product: product,
+      mainMenu: data.mainMenu.nodes,
+      footerMenu: data.footerMenu.nodes,
+      footerMenu2: data.footerMenu2.nodes,
+      mobileMenu: data.mobileMenu.nodes,
+      siteSeo: data.siteSeo.schema,
+      productCategories: data.productCategories.nodes,
+      product: data.product,
     },
     revalidate: 300,
   };
 }
+
 
 export async function getStaticPaths() {
   const { data } = await client.query({

@@ -40,7 +40,7 @@ export const getServerSideProps = async ({ res }) => {
         const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
         <url>
-            <loc>https://longwebstudio.net/</loc>
+            <loc>https://mypham.amycos.vn/</loc>
             <lastmod>${new Date().toISOString()}</lastmod>
         </url>
       ${[
@@ -50,7 +50,7 @@ export const getServerSideProps = async ({ res }) => {
             ]
                 .map(
                     (url) => `<url>
-        <loc>https://longwebstudio.net${url}</loc>
+        <loc>https://mypham.amycos.vn${url}</loc>
         <lastmod>${new Date().toISOString()}</lastmod>
       </url>`
                 )
