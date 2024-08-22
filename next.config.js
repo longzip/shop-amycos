@@ -22,13 +22,13 @@ module.exports = {
       "i1.wp.com",
     ],
   },
-  webpack: (config, { isServer }) => {
-    if (isServer) {
-      require("./scripts/generate-sitemap");
-    }
+  // webpack: (config, { isServer }) => {
+  //   if (isServer) {
+  //     require("./scripts/generate-sitemap");
+  //   }
 
-    return config;
-  },
+  //   return config;
+  // },
   async redirects() {
     return [
       {

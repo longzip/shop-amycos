@@ -1,21 +1,15 @@
-import fetch from "node-fetch";
-
-import {
-  ApolloClient,
-  ApolloLink,
-  InMemoryCache,
-  createHttpLink,
-} from "@apollo/client";
+import { ApolloClient, ApolloLink, InMemoryCache, createHttpLink } from '@apollo/client';
+import fetch from 'node-fetch';
 
 /**
- * Middleware operation
- * If we have a session token in localStorage, add it to the GraphQL request as a Session header.
+ * Middleware - xử lý trước khi gửi yêu cầu
+ * Nếu có token phiên làm việc trong localStorage, thêm nó vào header của yêu cầu GraphQL.
  */
-export const middleware = new ApolloLink((operation, forward) => {
+const middleware = new ApolloLink((operation, forward) => {
   /**
-   * If session data exist in local storage, set value as session header.
+   * Nếu có dữ liệu phiên làm việc trong local storage, đặt giá trị làm header phiên làm việc.
    */
-  const session = process.browser ? localStorage.getItem("woo-session") : null;
+  const session = (typeof window !== 'undefined') ? localStorage.getItem("woo-session") : null; // Kiểm tra process.browser
 
   if (session) {
     operation.setContext(({ headers = {} }) => ({
@@ -29,33 +23,30 @@ export const middleware = new ApolloLink((operation, forward) => {
 });
 
 /**
- * Afterware operation.
- *
- * This catches the incoming session token and stores it in localStorage, for future GraphQL requests.
+ * Afterware - xử lý sau khi nhận phản hồi
+ * Lấy token phiên làm việc mới từ header và lưu vào localStorage cho các yêu cầu GraphQL tiếp theo.
  */
-export const afterware = new ApolloLink((operation, forward) => {
+const afterware = new ApolloLink((operation, forward) => {
   return forward(operation).map((response) => {
-    if (!process.browser) {
+    // Chỉ xử lý trong trình duyệt
+    if (typeof window === 'undefined') {
       return response;
     }
 
     /**
-     * Check for session header and update session in local storage accordingly.
+     * Kiểm tra header phiên làm việc và cập nhật phiên làm việc trong local storage.
      */
     const context = operation.getContext();
-    const {
-      response: { headers },
-    } = context;
+    const { headers } = context.response;
     const session = headers.get("woocommerce-session");
 
     if (session) {
-      // Remove session data if session destroyed.
-      if ("false" === session) {
+      // Xóa dữ liệu phiên làm việc nếu phiên làm việc bị hủy
+      if (session === "false") {
         localStorage.removeItem("woo-session");
-
-        // Update session new data if changed.
-      } else if (localStorage.getItem("woo-session") !== session) {
-        localStorage.setItem("woo-session", headers.get("woocommerce-session"));
+      } else if (localStorage.getItem("woo-session") !== session) { 
+        // Cập nhật dữ liệu phiên làm việc mới nếu có thay đổi
+        localStorage.setItem("woo-session", session);
       }
     }
 
@@ -63,13 +54,13 @@ export const afterware = new ApolloLink((operation, forward) => {
   });
 });
 
-// Apollo GraphQL client.
+// Apollo GraphQL client
 const client = new ApolloClient({
   link: middleware.concat(
     afterware.concat(
       createHttpLink({
-        uri: `${process.env.NEXT_PUBLIC_WORDPRESS_URL}`,
-        fetch: fetch,
+        uri: process.env.NEXT_PUBLIC_WORDPRESS_URL, // Sử dụng biến môi trường
+        fetch: fetch, 
       })
     )
   ),
