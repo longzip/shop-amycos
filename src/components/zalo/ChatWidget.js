@@ -4,6 +4,7 @@ const ZaloChatWidget = () => {
   useEffect(() => {
     // Kiểm tra xem SDK của Zalo đã được tải chưa
     if (typeof window !== 'undefined' && !window.ZaloSocialSDK) {
+      console.log("zalo")
       const script = document.createElement('script');
       script.src = 'https://sp.zalo.me/plugins/sdk.js';
       script.async = true;
@@ -11,7 +12,7 @@ const ZaloChatWidget = () => {
 
       // Khởi tạo Zalo Chat Widget sau khi SDK đã tải xong
       script.onload = () => {
-        window.ZaloSocialSDK.init();
+        // window.ZaloSocialSDK.init();
 
         // Tạo element chứa widget
         const container = document.createElement('div');

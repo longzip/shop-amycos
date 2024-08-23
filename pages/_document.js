@@ -19,7 +19,9 @@ export default class MyDocument extends Document {
             async
             src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"
           /> */}
-          {/* <script async src="https://sp.zalo.me/plugins/sdk.js" /> */}
+          <div class="zalo-chat-widget" data-oaid="939846860985963068" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="0" data-width="" data-height=""></div>
+
+          <script src="https://sp.zalo.me/plugins/sdk.js"></script>
 
           {/* <script
             type="text/javascript"
