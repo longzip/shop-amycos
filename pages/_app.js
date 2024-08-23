@@ -6,6 +6,7 @@ import "nprogress/nprogress.css";
 
 import Router from "next/router";
 import NProgress from "nprogress";
+import ZaloChatWidget from "../src/components/zalo/ChatWidget";
 
 NProgress.configure({ showSpinner: false });
 Router.events.on("routeChangeStart", () => NProgress.start());
@@ -44,6 +45,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="theme-color" content="#ffffff" />
       </Head>
       <Component {...pageProps} />
+      <ZaloChatWidget />
     </>
   );
 }
