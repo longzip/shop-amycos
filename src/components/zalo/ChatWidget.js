@@ -16,7 +16,7 @@ const ZaloChatWidget = () => {
         // Tạo element chứa widget
         const container = document.createElement('div');
         container.id = 'zalo-chat-widget';
-        container.setAttribute('data-oaid', process.env.ZALO_OA_ID); // Thay bằng ID OA của bạn
+        container.setAttribute('data-oaid', "939846860985963068"); // Thay bằng ID OA của bạn
         container.setAttribute('data-welcome-message', 'Rất vui khi được hỗ trợ bạn!');
         container.setAttribute('data-autopopup', "0");
         document.body.appendChild(container);

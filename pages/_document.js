@@ -15,10 +15,10 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
 
-          <script
+          {/* <script
             async
             src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"
-          />
+          /> */}
           {/* <script async src="https://sp.zalo.me/plugins/sdk.js" /> */}
 
           {/* <script

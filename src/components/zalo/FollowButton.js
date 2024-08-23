@@ -20,7 +20,7 @@ const ZaloFollowButton = () => {
     return (
         <div
             className="zalo-follow"
-            data-oaid={process.env.ZALO_OA_ID}
+            data-oaid="939846860985963068"
             data-layout="1"
             data-color="blue"
             data-size="medium"
