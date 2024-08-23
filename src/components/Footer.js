@@ -10,6 +10,7 @@ import {
   YOUTUBE_PAGE_URL,
   ZALO_PAGE_URL,
 } from "../../lib/constants";
+import ZaloFollowButton from "./zalo/FollowButton";
 
 const Footer1 = ({
   siteSeo: { logo, siteName, homeUrl },
@@ -37,6 +38,7 @@ const Footer1 = ({
             className="mt-5"
             dangerouslySetInnerHTML={{ __html: logo.caption }}
           />
+          <ZaloFollowButton />
           <div className="flex items-center gap-x-4 mt-12">
             <div className="opacity-50 w-8 h-8 flex-shrink-0 bg-gray-800 cursor-pointer hover:bg-gray-700 rounded-full flex items-center justify-center">
               <a href="https://www.facebook.com/amycos.vn" target="_blank">
