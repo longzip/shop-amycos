@@ -27,7 +27,7 @@ export default function ProductList({ products, title = "", xemThem }) {
               key={product.id}
               className="rounded overflow-hidden shadow-lg flex flex-col"
             >
-              <a href={`/cua-hang/${product?.slug}/`}>
+              <a href={`/san-pham/${product?.slug}/`}>
                 <div className="relative">
                   <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-white xl:aspect-h-8 xl:aspect-w-7">
                     <img

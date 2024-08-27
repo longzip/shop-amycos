@@ -73,7 +73,7 @@ export default function Product({
           <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4 ">
             <Head>{parse(product.seo.fullHead)}</Head>
             <p className=" focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 font-normal text-base leading-4 text-gray-600 font-playfair">
-              Trang chủ / Cửa hàng / {product.name}
+              Trang chủ / Sản phẩm / {product.name}
             </p>
             <div className="flex justify-center items-center lg:flex-row flex-col gap-8 mt-6">
               {!isEmpty(product?.galleryImages?.nodes) ? (
@@ -184,7 +184,7 @@ export default function Product({
                       className="w-6 h-6"
                       onClick={() =>
                         navigator.clipboard.writeText(
-                          `${product.name}\r\n\nMã sản phẩm: ${product.sku}\r\n\nGiá ưu đãi: ${product.price}\r\n\nMua hàng chính hãng ưu đãi hấp dẫn tại ${WEBSITE_URL}/cua-hang/${router.query.slug}/`
+                          `${product.name}\r\n\nMã sản phẩm: ${product.sku}\r\n\nGiá ưu đãi: ${product.price}\r\n\nMua hàng chính hãng ưu đãi hấp dẫn tại ${WEBSITE_URL}/san-pham/${router.query.slug}/`
                         )
                       }
                     >

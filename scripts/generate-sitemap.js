@@ -89,7 +89,7 @@ async function generateSitemap() {
     "public/**/*.html",
     "!pages/_*.js",
     "!pages/[slug].js",
-    "!pages/cua-hang/[slug].js",
+    "!pages/san-pham/[slug].js",
     "!pages/danh-muc-san-pham/[slug].js",
     "!pages/api",
   ]);
@@ -108,7 +108,7 @@ async function generateSitemap() {
   const sitemap = `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${[
   ...pages,
-  ...(allProducts.map(({ slug }) => `/cua-hang/${slug}`) || []),
+  ...(allProducts.map(({ slug }) => `/san-pham/${slug}`) || []),
   ,
   ...(productCategories.map(({ slug }) => `/danh-muc-san-pham/${slug}`) || []),
 ]

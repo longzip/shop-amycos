@@ -82,7 +82,7 @@ const Header = ({
                           {section.products.nodes.map((item) => (
                             <li key={item.name} className="flow-root">
                               <a
-                                href={`/cua-hang/${item.slug}/`}
+                                href={`/san-pham/${item.slug}/`}
                                 className="-m-2 block p-2 text-gray-500"
                               >
                                 {item.name}

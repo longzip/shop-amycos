@@ -37,13 +37,18 @@ module.exports = {
         permanent: true,
       },
       {
-        source: "/san-pham/:path*",
-        destination: "/cua-hang/:path*",
+        source: "/danh-muc-san-pham/:path*",
+        destination: "https://mypham.amycos.vn/:path*",
+        permanent: true,
+      },
+      {
+        source: "/cua-hang/:path*",
+        destination: "/san-pham/:path*",
         permanent: true,
       },
       {
         source: "/shop/:path*",
-        destination: "/cua-hang/:path*",
+        destination: "/san-pham/:path*",
         permanent: true,
       },
       {
@@ -74,12 +79,12 @@ module.exports = {
       {
         source: "/cua-hang/glow-booster-serum/",
         destination:
-          "/cua-hang/amycos-glow-booster-serum-duong-da-mo-nam-tan-nhang/",
+          "/san-pham/amycos-glow-booster-serum-duong-da-mo-nam-tan-nhang/",
         permanent: true,
       },
       {
         source: "/cua-hang/serum-huong-duong/",
-        destination: "/cua-hang/serum-hoa-huong-duong-amycos/",
+        destination: "/san-pham/serum-hoa-huong-duong-amycos/",
         permanent: true,
       },
       {

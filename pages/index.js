@@ -45,7 +45,6 @@ export default function Home({
           <ProductList
             products={products.nodes}
             title={name}
-            xemThem={`/danh-muc-san-pham/${slug}/`}
           ></ProductList>
         </div>
       ))}
