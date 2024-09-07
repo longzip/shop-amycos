@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { ImageLoader } from "../utils/image-loader"
 import Price from "./single-product/price";
 
 export default function ProductList({ products, title = "", xemThem }) {
@@ -29,10 +31,13 @@ export default function ProductList({ products, title = "", xemThem }) {
             >
               <a href={`/san-pham/${product?.slug}/`}>
                 <div className="relative">
-                  <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-white xl:aspect-h-8 xl:aspect-w-7">
-                    <img
-                      src={product.image?.sourceUrl.replace("https://www","https://i0.wp.com/www")}
+                  <div className="aspect-w-1 w-full overflow-hidden rounded-lg bg-white xl:aspect-h-8 xl:aspect-w-7">
+                    <Image
+                      loader={ImageLoader}
+                      src={product.image?.sourceUrl}
                       alt={product.image?.altText}
+                      width={500}
+                      height={500}
                       className="h-full w-full object-cover object-center group-hover:opacity-75"
                     />
                   </div>

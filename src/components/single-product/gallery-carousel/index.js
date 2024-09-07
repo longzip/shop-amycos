@@ -1,8 +1,9 @@
 import { isEmpty, isArray } from "lodash";
-// import { useState, useRef } from "react";
 import LightGallery from "lightgallery/react";
 import lgZoom from "lightgallery/plugins/zoom";
 import lgVideo from "lightgallery/plugins/video";
+import Image from "next/image";
+import { ImageLoader } from "../../../utils/image-loader"
 
 const GalleryCarousel = ({ gallery, image }) => {
   if (isEmpty(gallery) || !isArray(gallery)) {
@@ -20,7 +21,14 @@ const GalleryCarousel = ({ gallery, image }) => {
         />
       ) : (
         <div className=" w-full flex justify-center items-center">
-          <img src={image.sourceUrl.replace("https://www","https://i0.wp.com/www")+"?fit=600%2C600&ssl=1"} alt={image.altText} />
+          <Image
+            loader={ImageLoader}
+            src={image.sourceUrl}
+            alt={image.altText}
+            height={640}
+            width={640}
+          />
+
         </div>
       )}
 
@@ -32,10 +40,17 @@ const GalleryCarousel = ({ gallery, image }) => {
         {gallery.map((item) => (
           <a
             className="gallery-item bg-gray-100 flex justify-center items-center"
-            data-src={item.description || item?.sourceUrl.replace("https://www","https://i0.wp.com/www")}
+            data-src={item.description || item?.sourceUrl.replace("https://www", "https://i0.wp.com/www")}
             key={item.id}
           >
-            <img className="img-responsive" alt="" src={item?.sourceUrl.replace("https://www","https://i0.wp.com/www")+"?fit=300%2C300&ssl=1"} />
+            <Image
+              loader={ImageLoader}
+              className="img-responsive"
+              src={item?.sourceUrl}
+              alt={item.altText}
+              width={384}
+              height={384}
+            />
           </a>
         ))}
       </LightGallery>

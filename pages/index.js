@@ -6,6 +6,8 @@ import PRODUCTS_AND_CATEGORIES_QUERY from "../src/queries/product-and-categories
 import NAV_QUERY from "../src/queries/nav";
 // import HeroCarousel from "../src/components/home/hero-carousel";
 import parse from "html-react-parser";
+import Image from "next/image";
+import { ImageLoader } from "../src/utils/image-loader";
 
 export default function Home({
   homePage,
@@ -35,9 +37,12 @@ export default function Home({
         <div key={slug}>
           <div>
             {image ? (
-              <img
-                src={image?.sourceUrl.replace("https://www","https://i0.wp.com/www")}
+              <Image
+                loader={ImageLoader}
+                src={image?.sourceUrl}
                 alt={image?.altText}
+                width={1640}
+                height={924}
                 className="h-full w-full object-cover object-center group-hover:opacity-75"
               />
             ) : null}

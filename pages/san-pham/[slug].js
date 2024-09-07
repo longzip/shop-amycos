@@ -9,13 +9,15 @@ import {
   PRODUCT_SLUGS,
 } from "../../src/queries/product-by-slug";
 import NAV_QUERY from "../../src/queries/nav";
-import {  isEmpty } from "lodash";
+import { isEmpty } from "lodash";
 import GalleryCarousel from "../../src/components/single-product/gallery-carousel";
 import Price from "../../src/components/single-product/price";
 import parse from "html-react-parser";
 import ProductList from "../../src/components/ProductList";
 import PostBody from "../../src/components/post-body";
 import { WEBSITE_URL, WORDPRESS_URL } from "../../lib/constants";
+import Image from "next/image";
+import { ImageLoader } from "../../src/utils/image-loader";
 // import MailChimpForm from "../../src/components/MailchimpForm";
 
 export default function Product({
@@ -46,7 +48,7 @@ export default function Product({
     return <div>Loading...</div>;
   }
 
-  
+
   const otherProductsRaw = product.productCategories.nodes
     .map(({ products }) => products.nodes)
     .flat();
@@ -58,7 +60,7 @@ export default function Product({
   });
   const otherProducts = [...getProductOthers.values()];
   // Lấy danh sách sản phẩm khác
-  
+
   return (
     <Layout
       siteSeo={siteSeo}
@@ -83,12 +85,13 @@ export default function Product({
                 />
               ) : !isEmpty(product.image) ? (
                 <div className="w-full lg:w-4/12">
-                  <img
-                    src={product?.image?.sourceUrl.replace("https://www","https://i0.wp.com/www")+"?fit=600%2C600&ssl=1"}
+                  <Image
+                    loader={ImageLoader}
+                    src={product?.image?.sourceUrl}
                     alt="Product Image"
-                    width="100%"
-                    height="auto"
-                    
+                    width="640"
+                    height="640"
+
                   />
                 </div>
               ) : null}
@@ -166,7 +169,8 @@ export default function Product({
                     </svg>
                   </div>
                   <a
-                    href={`https://${WORDPRESS_URL}?p=${product.productId}`}
+                    href={`https://mypham.amycos.vn/san-pham/${product.slug}/#reviews`}
+                    target="_blank"
                     className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 font-normal text-base leading-4 text-gray-700 hover:underline hover:text-gray-800 duration-100 cursor-pointer"
                   >
                     {product.productId} reviews
@@ -280,7 +284,7 @@ export default function Product({
               </div>
             </div>
 
-            <PostBody content={product.description} />      
+            <PostBody content={product.description} />
           </div>
           <ProductList products={otherProducts} title="Sản phẩm khác" />
         </>
