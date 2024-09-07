@@ -31,7 +31,7 @@ export default function ProductList({ products, title = "", xemThem }) {
             >
               <a href={`/san-pham/${product?.slug}/`}>
                 <div className="relative">
-                  <div className="aspect-w-1 w-full overflow-hidden rounded-lg bg-white xl:aspect-h-8 xl:aspect-w-7">
+                  <div className="aspect-w-1 w-full overflow-hidden rounded-lg bg-white xl:aspect-w-7">
                     <Image
                       loader={ImageLoader}
                       src={product.image?.sourceUrl}
