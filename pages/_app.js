@@ -17,10 +17,10 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Shop Hồ Thắm</title>
+        <title>Mỹ Phẩm Amycos - Giải Pháp Hoàn Hảo Cho Làn Da Mặt Sáng Mịn, Không Tì Vết</title>
         <meta
           name="description"
-          content="Mua hàng tiêu dùng chính hãng tại SHOP Hồ Thắm - Điểm Bưu điện VHX Tự Lập"
+          content="Nám, mụn, da xỉn màu không còn là nỗi lo. Amycos với các dòng sản phẩm chuyên biệt sẽ giúp bạn giải quyết mọi vấn đề về da, mang lại làn da sáng mịn, tươi trẻ."
         />
         <link
           rel="apple-touch-icon"
