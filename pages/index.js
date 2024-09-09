@@ -87,6 +87,7 @@ async function loadData() {
       homePage: data?.pageBy,
     };
   } catch (error) {
+    console.log(error)
     return null;
   }
 }

@@ -102,7 +102,7 @@ const NAV_QUERY = gql`
             image {
               id
               altText
-              sourceUrl(size: WOOCOMMERCE_SINGLE)
+              sourceUrl
             }
             name
             ... on SimpleProduct {
