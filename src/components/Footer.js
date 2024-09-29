@@ -279,11 +279,13 @@ const Footer1 = ({
         <a href={homeUrl} className="hover:underline">
           {siteName}™
         </a>
-        . Thiết kế website hiện đại cùng{" "}
-        <a
-          className="text-underlinefont-semibold text-gray-900 underline dark:text-white decoration-indigo-500 hover:underline"
+        . <a className="text-underlinefont-semibold text-gray-900 underline decoration-indigo-500 hover:underline"
           target="_blank"
-          href="https://thietke.longwebstudio.net/"
+          href="https://thietke.longwebstudio.net/">Thiết kế website giá rẻ trọn gói</a> cùng{" "}
+        <a
+          className="text-underlinefont-semibold text-gray-900 underline decoration-indigo-500 hover:underline"
+          target="_blank"
+          href="https://www.longwebstudio.net/"
         >
           Long Web Studio
         </a>{" "}
