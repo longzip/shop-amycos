@@ -41,7 +41,16 @@ export default function CategorySingle({
       footerMenu2={footerMenu2}
       productCategories={productCategories}
     >
-      <Head>{fullHead}</Head>
+      <Head>
+        <title>
+          {seo.title}
+        </title>
+        <meta
+          name="description"
+          content={seo.metaDesc}
+          key="desc"
+        />
+        {fullHead}</Head>
       <div className="mx-auto container px-6 xl:px-0">
         <div className="flex flex-col">
           {categoryName ? (

@@ -8,6 +8,8 @@ export const PAGE_BY_SLUG_QUERY = gql`
       title
       uri
       seo {
+        title
+        metaDesc
         fullHead
       }
       pageId: databaseId

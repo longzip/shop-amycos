@@ -32,7 +32,15 @@ const Checkout3 = ({
       footerMenu2={footerMenu2}
       productCategories={productCategories}
     >
-      <Head>{fullHead}</Head>
+      <Head><title>
+        {seo?.title}
+      </title>
+        <meta
+          name="description"
+          content={seo?.metaDesc}
+          key="desc"
+        />
+        {fullHead}</Head>
       <CheckoutForm2 />
     </Layout>
   );

@@ -30,7 +30,9 @@ export default function Home({
       footerMenu2={footerMenu2}
       productCategories={productCategories}
     >
-      <Head>{parse(homePage?.seo?.fullHead)}</Head>
+      <Head>
+        <title>{homePage.seo.title}</title>
+        {parse(homePage.seo.fullHead)}</Head>
       {/* <HeroCarousel heroCarousel={heroCarousel} /> */}
 
       {productCategories.map(({ name, image, products, slug }) => (

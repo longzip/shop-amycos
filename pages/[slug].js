@@ -39,7 +39,16 @@ export default function CategorySingle({
       footerMenu2={footerMenu2}
       productCategories={productCategories}
     >
-      <Head>{fullHead}</Head>
+      <Head>
+        <title>
+          {seo?.title}
+        </title>
+        <meta
+          name="description"
+          content={seo?.metaDesc}
+          key="desc"
+        />
+        {fullHead}</Head>
       <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4 ">
         <p className=" focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 font-normal text-base leading-4 text-gray-600">
           Trang chủ / {page.title}

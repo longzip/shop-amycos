@@ -1,36 +1,14 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-// import { MAILCHIMP_FORM_CONN } from "../lib/constants";
 
 export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="vi">
         <Head>
-          {/* <script
-            async
-            src={`https://js.hsforms.net/forms/embed/v2.js?ver=11.0.32`}
-          /> */}
         </Head>
         <body>
           <Main />
           <NextScript />
-
-          {/* <script
-            async
-            src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"
-          /> */}
-          <div class="zalo-chat-widget" data-oaid="939846860985963068" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="0" data-width="" data-height=""></div>
-
-          <script src="https://sp.zalo.me/plugins/sdk.js"></script>
-
-          {/* <script
-            type="text/javascript"
-            id="hs-script-loader"
-            async
-            defer
-            src="//js.hs-scripts.com/44095848.js"
-          /> */}
-
           {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
             <script
               async
@@ -41,16 +19,18 @@ export default class MyDocument extends Document {
             <script
               dangerouslySetInnerHTML={{
                 __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-              page_path: window.location.pathname,
-            });
-          `,
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+                    page_path: window.location.pathname,
+                  });
+                `,
               }}
             />
           ) : null}
+          <div className="zalo-chat-widget" data-oaid="939846860985963068" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="0" data-width="" data-height=""></div>
+          <script src="https://sp.zalo.me/plugins/sdk.js"></script>
         </body>
       </Html>
     );

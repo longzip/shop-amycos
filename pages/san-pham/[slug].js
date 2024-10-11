@@ -73,7 +73,16 @@ export default function Product({
       {product ? (
         <>
           <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4 ">
-            <Head>{parse(product.seo.fullHead)}</Head>
+            <Head>
+              <title>
+                {product.seo.title}
+              </title>
+              <meta
+                name="description"
+                content={product.seo.metaDesc}
+                key="desc"
+              />
+              {parse(product.seo.fullHead)}</Head>
             <p className=" focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 font-normal text-base leading-4 text-gray-600 font-playfair">
               Trang chủ / Sản phẩm / {product.name}
             </p>

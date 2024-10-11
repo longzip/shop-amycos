@@ -1,16 +1,13 @@
 import React, { useState } from "react";
-import Link from "next/link";
+
 import isEmpty from "../validator/isEmpty";
 import {
-  FB_PAGE_URL,
   INPUT_SECRET,
   INSTAGRAM_PAGE_URL,
   MAILCHIMP_FORM_URL,
-  TIKTOK_PAGE_URL,
-  YOUTUBE_PAGE_URL,
   ZALO_PAGE_URL,
 } from "../../lib/constants";
-import ZaloFollowButton from "./zalo/FollowButton";
+
 
 const Footer1 = ({
   siteSeo: { logo, siteName, homeUrl },
@@ -30,15 +27,12 @@ const Footer1 = ({
           <h2 className="text-base font-semibold leading-4 text-secondary font-playfair">
             Thông tin liên hệ
           </h2>
-          {/* <div
-            className="mt-1 zalo-follow-only-button"
-            data-oaid="907870636305349915"
-          ></div> */}
+
           <div
             className="mt-5"
             dangerouslySetInnerHTML={{ __html: logo.caption }}
           />
-          <ZaloFollowButton />
+
           <div className="flex items-center gap-x-4 mt-12">
             <div className="opacity-50 w-8 h-8 flex-shrink-0 bg-gray-800 cursor-pointer hover:bg-gray-700 rounded-full flex items-center justify-center">
               <a href="https://www.facebook.com/amycos.vn" target="_blank">
@@ -114,12 +108,12 @@ const Footer1 = ({
             </div>
             <div className="opacity-50 w-8 h-8 flex-shrink-0 bg-gray-800 cursor-pointer hover:bg-gray-700 rounded-full flex items-center justify-center">
               <a href={ZALO_PAGE_URL} target="_blank">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M12.49 10.272v-.45h1.347v6.322h-.77a.576.576 0 0 1-.577-.573v.001a3.27 3.27 0 0 1-1.938.632a3.284 3.284 0 0 1-3.284-3.282a3.284 3.284 0 0 1 3.284-3.282a3.27 3.27 0 0 1 1.937.632zM6.919 7.79v.205c0 .382-.051.694-.3 1.06l-.03.034a8 8 0 0 0-.242.285L2.024 14.8h4.895v.768a.576.576 0 0 1-.577.576H0v-.362c0-.443.11-.641.25-.847L4.858 9.23H.192V7.79zm8.551 8.354a.48.48 0 0 1-.48-.48V7.79h1.441v8.354zM20.693 9.6a3.306 3.306 0 1 1 .002 6.612a3.306 3.306 0 0 1-.002-6.612m-10.14 5.253a1.932 1.932 0 1 0 0-3.863a1.932 1.932 0 0 0 0 3.863m10.14-.003a1.945 1.945 0 1 0 0-3.89a1.945 1.945 0 0 0 0 3.89"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M12.49 10.272v-.45h1.347v6.322h-.77a.576.576 0 0 1-.577-.573v.001a3.27 3.27 0 0 1-1.938.632a3.284 3.284 0 0 1-3.284-3.282a3.284 3.284 0 0 1 3.284-3.282a3.27 3.27 0 0 1 1.937.632zM6.919 7.79v.205c0 .382-.051.694-.3 1.06l-.03.034a8 8 0 0 0-.242.285L2.024 14.8h4.895v.768a.576.576 0 0 1-.577.576H0v-.362c0-.443.11-.641.25-.847L4.858 9.23H.192V7.79zm8.551 8.354a.48.48 0 0 1-.48-.48V7.79h1.441v8.354zM20.693 9.6a3.306 3.306 0 1 1 .002 6.612a3.306 3.306 0 0 1-.002-6.612m-10.14 5.253a1.932 1.932 0 1 0 0-3.863a1.932 1.932 0 0 0 0 3.863m10.14-.003a1.945 1.945 0 1 0 0-3.89a1.945 1.945 0 0 0 0 3.89" /></svg>
               </a>
             </div>
             <div className="opacity-50 w-8 h-8 flex-shrink-0 bg-gray-800 cursor-pointer hover:bg-gray-700 rounded-full flex items-center justify-center">
               <a href="/shopee" target="_blank">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="m4 7l.867 12.143a2 2 0 0 0 2 1.857h10.276a2 2 0 0 0 2-1.857L20.01 7h-16zm4.5 0c0-1.653 1.5-4 3.5-4s3.5 2.347 3.5 4"/><path d="M9.5 17c.413.462 1 1 2.5 1s2.5-.897 2.5-2s-1-1.5-2.5-2s-2-1.47-2-2c0-1.104 1-2 2-2s1.5 0 2.5 1"/></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="m4 7l.867 12.143a2 2 0 0 0 2 1.857h10.276a2 2 0 0 0 2-1.857L20.01 7h-16zm4.5 0c0-1.653 1.5-4 3.5-4s3.5 2.347 3.5 4" /><path d="M9.5 17c.413.462 1 1 2.5 1s2.5-.897 2.5-2s-1-1.5-2.5-2s-2-1.47-2-2c0-1.104 1-2 2-2s1.5 0 2.5 1" /></g></svg>
               </a>
             </div>
           </div>
@@ -131,18 +125,15 @@ const Footer1 = ({
           <ul>
             {footerMenu[0]?.menuItems?.nodes
               ? footerMenu[0].menuItems.nodes.map((menuItem) => (
-                  <li
-                    key={menuItem.id}
-                    className="hover:text-gray-800 text-base leading-4 mt-6 text-gray-500 cursor-pointer"
-                  >
-                    <Link key={menuItem.id} href={menuItem.path}>
-                      <a
-                        dangerouslySetInnerHTML={{ __html: menuItem.label }}
-                        target="_blank"
-                      />
-                    </Link>
-                  </li>
-                ))
+                <li
+                  key={menuItem.id}
+                  className="hover:text-gray-800 text-base leading-4 mt-6 text-gray-500 cursor-pointer"
+                >
+                  <a key={menuItem.id} href={menuItem.path} target="_blank">
+                    {menuItem.label}
+                  </a>
+                </li>
+              ))
               : null}
           </ul>
         </div>
@@ -153,18 +144,15 @@ const Footer1 = ({
           <ul>
             {footerMenu2[0]?.menuItems?.nodes
               ? footerMenu2[0].menuItems.nodes.map((menuItem) => (
-                  <li
-                    key={menuItem.id}
-                    className="hover:text-gray-800 text-base leading-4 mt-6 text-gray-500 cursor-pointer"
-                  >
-                    <Link key={menuItem.id} href={menuItem.path}>
-                      <a
-                        dangerouslySetInnerHTML={{ __html: menuItem.label }}
-                        target="_blank"
-                      />
-                    </Link>
-                  </li>
-                ))
+                <li
+                  key={menuItem.id}
+                  className="hover:text-gray-800 text-base leading-4 mt-6 text-gray-500 cursor-pointer"
+                >
+                  <a key={menuItem.id} href={menuItem.path} target="_blank">
+                    {menuItem.label}
+                  </a>
+                </li>
+              ))
               : null}
           </ul>
         </div>
@@ -288,17 +276,8 @@ const Footer1 = ({
           href="https://www.longwebstudio.net/"
         >
           Long Web Studio
-        </a>{" "}
-        {/* <a
-          href="//www.dmca.com/Protection/Status.aspx?ID=f7805dd1-3206-48d2-aed8-564276b49ce5"
-          title="DMCA.com Protection Status"
-          className="dmca-badge"
-        >
-          <img
-            src="https://images.dmca.com/Badges/dmca_protected_sml_120n.png?ID=f7805dd1-3206-48d2-aed8-564276b49ce5"
-            alt="DMCA.com Protection Status"
-          />
-        </a> */}
+        </a>
+
       </p>
     </div>
   );

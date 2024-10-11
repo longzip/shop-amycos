@@ -39,6 +39,8 @@ export const PRODUCT_BY_SLUG_QUERY = gql`
         stockQuantity
         sku
         seo {
+          title
+          metaDesc
           fullHead
         }
       }
@@ -50,6 +52,8 @@ export const PRODUCT_BY_SLUG_QUERY = gql`
         stockQuantity
         sku
         seo {
+          title
+          metaDesc
           fullHead
         }
       }
@@ -60,6 +64,8 @@ export const PRODUCT_BY_SLUG_QUERY = gql`
         externalUrl
         buttonText
         seo {
+          title
+          metaDesc
           fullHead
         }
       }
@@ -71,6 +77,8 @@ export const PRODUCT_BY_SLUG_QUERY = gql`
               price
               regularPrice
               seo {
+                title
+                metaDesc
                 fullHead
               }
             }

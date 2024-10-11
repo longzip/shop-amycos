@@ -5,8 +5,10 @@ import { gql } from "@apollo/client";
  */
 const PRODUCTS_AND_CATEGORIES_QUERY = gql`
   query {
-    pageBy(uri: "/") {
+    pageBy(uri: "/san-pham") {
       seo {
+        title
+        metaDesc
         fullHead
       }
     }
